@@ -4,7 +4,7 @@ Project(sort)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-set(SRC_FILE_LISTS ${SRC_DIR}/sort.cpp)
+set(SRC_FILE_LISTS ${SRC_DIR}/sort.cpp src/CStackSort.cpp src/CStackSort.h)
 
 # src part
 include_directories(${SRC_DIR})

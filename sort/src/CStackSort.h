@@ -25,10 +25,33 @@ SOFTWARE.
 #pragma once
 #include "BaseSort.h"
 
-class StackSort : public CBaseSort
+class CStackSort : CBaseSort
 {
+private:
+    vector<long> data_list;
+    vector<long> max_head;
+    vector<long> min_head;
+    enum heapType{
+        MAX_HEAP = 0,
+        MIN_HEAP
+    };
+public:
+    CStackSort(vector<long> data);
+    virtual ~CStackSort();
+private:
+    virtual bool heap_min_create(vector<long>& data);
+    virtual void heap_min_fixdown(vector<long>& data, int pos, int total);
+    virtual bool heap_min_sort(vector<long>data, vector<long>& result);
 
+    virtual bool heap_max_create(vector<long>& data);
+    virtual void heap_max_fixdown(vector<long>& data, int pos, int total);
+    virtual bool heap_max_sort(vector<long>data, vector<long>& result);
+
+    virtual bool heap_sort(vector<long> data, vector<long>& result, heapType type);
+protected:
+    virtual bool sort();
+public:
+    virtual bool print_the_sorted_list();
+    virtual bool get_user_data(vector<long> user_data);
+    virtual vector<long> get_sorted_data();
 };
-
-
-#endif //TMPLATE_PRACTICE_STACKSORT_H
