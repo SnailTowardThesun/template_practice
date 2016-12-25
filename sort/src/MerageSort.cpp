@@ -1,3 +1,28 @@
+/*
+MIT License
+
+Copyright (c) 2016 ME_Kun_Han
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+
 #include "MerageSort.h"
 #include "InsertionSort.h"
 CMerageSort::CMerageSort()
@@ -40,23 +65,25 @@ void CMerageSort::merage_array(vector<long>& array, int lo, int mid, int hi)
     //CInsertionSort::sort_part(array, lo, hi);
     int i = lo, j = mid + 1;
     vector<long> aux(hi+1, 0);
-    //把元素拷贝到辅助数组中
+    //copy item into array
     for (int k = lo; k <= hi; k++)
     {
         aux[k] = array[k];
     }
-    //然后按照规则将数据从辅助数组中拷贝回原始的array中
+    // copy the data into original array
     for (int k = lo; k <= hi; k++)
     {
-        //如果左边元素没了， 直接将右边的剩余元素都合并到到原数组中
+        // the left is empty copy all right
         if (i > mid)
         {
             array[k] = aux[j++];
-        }//如果右边元素没有了，直接将所有左边剩余元素都合并到原数组中
+        }
+        // the right is empty copy all left
         else if (j > hi)
         {
             array[k] = aux[i++];
-        }//如果左边右边小，则将左边的元素拷贝到原数组中
+        }
+        // if left less then right, copy left
         else if (aux[i]<aux[j])
         {
             array[k] = aux[i++];
