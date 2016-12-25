@@ -26,7 +26,7 @@ SOFTWARE.
 #pragma once
 #include "BaseSort.h"
 
-// ©ЛкыеепР
+// quick sort
 class CQuickSort
 {
 public:

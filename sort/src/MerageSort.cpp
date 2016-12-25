@@ -98,7 +98,7 @@ void CMerageSort::merage_array(vector<long>& array, int lo, int mid, int hi)
 bool CMerageSort::print_the_sorted_list()
 {
     if (m_data_list.size() == 0) return false;
-    cout << "running merage sort method" << endl;
+    cout << "running merge sort method" << endl;
     sort();
 
     cout << "the result of sorted list is:" << endl;

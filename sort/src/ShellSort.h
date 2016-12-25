@@ -26,7 +26,7 @@ SOFTWARE.
 class CShellSort
 {
 public:
-	CShellSort();
-	~CShellSort();
+    CShellSort();
+    ~CShellSort();
 };
 

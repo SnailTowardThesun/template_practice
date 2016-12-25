@@ -1,2 +1,5 @@
 objs/
 compile/
+.idea/
+.ycm_extra_conf.py
+cmake-build-debug
