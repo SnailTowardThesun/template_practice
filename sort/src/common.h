@@ -29,5 +29,5 @@ SOFTWARE.
 #include "BubbleSort.h"
 #include "SelectionSort.h"
 #include "InsertionSort.h"
-#include "MerageSort.h"
+#include "MergeSort.h"
 #include "QuickSort.h"

@@ -23,30 +23,30 @@ SOFTWARE.
 */
 
 
-#include "MerageSort.h"
+#include "MergeSort.h"
 #include "InsertionSort.h"
-CMerageSort::CMerageSort()
+CMergeSort::CMergeSort()
 {
 }
 
-CMerageSort::~CMerageSort()
+CMergeSort::~CMergeSort()
 {
 }
 
-CMerageSort::CMerageSort(vector<long> user_data)
+CMergeSort::CMergeSort(vector<long> user_data)
 {
     m_data_list = user_data;
 }
 
 
-bool CMerageSort::sort()
+bool CMergeSort::sort()
 {
     if (m_data_list.size() == 0) return true;
-    merage_sort(m_data_list, 0, m_data_list.size() - 1);
+    merge_sort(m_data_list, 0, m_data_list.size() - 1);
     return true;
 }
 
-void CMerageSort::merage_sort(vector<long>& data, int lo, int hi)
+void CMergeSort::merge_sort(vector<long> &data, int lo, int hi)
 {
     if (lo >= hi) return;
     if (hi - lo <= ARRAY_LENGTH_WHEN_USING_INSERTION_SORT)
@@ -55,12 +55,12 @@ void CMerageSort::merage_sort(vector<long>& data, int lo, int hi)
         return;
     }
     int mid = lo + (hi - lo)/2;
-    merage_sort(data, lo, mid);
-    merage_sort(data, mid+1, hi);
-    merage_array(data, lo, mid, hi);
+    merge_sort(data, lo, mid);
+    merge_sort(data, mid + 1, hi);
+    merge_array(data, lo, mid, hi);
 }
 
-void CMerageSort::merage_array(vector<long>& array, int lo, int mid, int hi)
+void CMergeSort::merge_array(vector<long> &array, int lo, int mid, int hi)
 {
     //CInsertionSort::sort_part(array, lo, hi);
     int i = lo, j = mid + 1;
@@ -95,7 +95,7 @@ void CMerageSort::merage_array(vector<long>& array, int lo, int mid, int hi)
     }
 }
 
-bool CMerageSort::print_the_sorted_list()
+bool CMergeSort::print_the_sorted_list()
 {
     if (m_data_list.size() == 0) return false;
     cout << "running merge sort method" << endl;
@@ -109,7 +109,7 @@ bool CMerageSort::print_the_sorted_list()
     return true;
 }
 
-bool CMerageSort::get_user_data(vector<long> user_data)
+bool CMergeSort::get_user_data(vector<long> user_data)
 {
     m_data_list = user_data;
     return true;

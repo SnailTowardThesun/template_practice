@@ -26,7 +26,7 @@ SOFTWARE.
 #pragma once
 #include "BaseSort.h"
 
-// ц╟ещеепР
+// bubble sort
 class CBubbleSort : CBaseSort
 {
 public:

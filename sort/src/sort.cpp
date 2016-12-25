@@ -44,7 +44,7 @@ int main(void)
     //pInsertion->print_the_sorted_list();
     delete pInsertion;
 
-    CMerageSort* pMerage = new CMerageSort(data_for_test);
+    CMergeSort* pMerage = new CMergeSort(data_for_test);
     //pMerage->print_the_sorted_list();
     delete pMerage;
 

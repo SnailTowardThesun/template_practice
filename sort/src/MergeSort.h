@@ -25,18 +25,18 @@ SOFTWARE.
 
 #pragma once
 #include "BaseSort.h"
-// ∫œ≤¢≈≈–Ú
-class CMerageSort : CBaseSort
+// merge sort
+class CMergeSort : CBaseSort
 {
 public:
-    CMerageSort();
-    CMerageSort(vector<long> user_data);
-    ~CMerageSort();
+    CMergeSort();
+    CMergeSort(vector<long> user_data);
+    ~CMergeSort();
 private:
     const int ARRAY_LENGTH_WHEN_USING_INSERTION_SORT = 3;
     vector<long> m_data_list;
-    void merage_sort(vector<long>& data, int lo, int high);
-    void merage_array(vector<long>& data, int lo, int mid, int hi);
+    void merge_sort(vector<long> &data, int lo, int high);
+    void merge_array(vector<long> &data, int lo, int mid, int hi);
 protected:
     bool sort();
 public:

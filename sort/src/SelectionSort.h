@@ -27,7 +27,7 @@ SOFTWARE.
 
 #include "BaseSort.h"
 
-// —°‘Ò≈≈–Ú
+// select sort
 class CSelectionSort:CBaseSort
 {
 public:
