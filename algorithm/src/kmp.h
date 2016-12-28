@@ -22,22 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "common.h"
-#include "dfs.h"
-#include "kmp.h"
+#pragma once
 
-int main(void)
+class kmp
 {
-    cout << "##################################" << endl;
-    cout << "run algorithm test" << endl;
-    cout << "##################################" << endl;
-
-    dfs *s = new dfs(4);
-    s->print_result();
-    delete s;
-
-    kmp *k = new kmp("aacddeesafkajkdl;kfjas;ldkfjas;ldfkj", "fka");
-    k->print_result();
-    delete k;
-    return 0;
-}
+private:
+    std::string buffer1;
+    std::string buffer2;
+public:
+    kmp(std::string buf1, std::string buf2);
+    virtual ~kmp();
+public:
+    virtual void print_result();
+};

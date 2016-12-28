@@ -23,21 +23,22 @@ SOFTWARE.
 */
 
 #include "common.h"
-#include "dfs.h"
 #include "kmp.h"
 
-int main(void)
+kmp::kmp(std::string buf1, std::string buf2)
 {
-    cout << "##################################" << endl;
-    cout << "run algorithm test" << endl;
-    cout << "##################################" << endl;
+    buffer1 = buf1;
+    buffer2 = buf2;
+}
 
-    dfs *s = new dfs(4);
-    s->print_result();
-    delete s;
+kmp::~kmp()
+{
 
-    kmp *k = new kmp("aacddeesafkajkdl;kfjas;ldkfjas;ldfkj", "fka");
-    k->print_result();
-    delete k;
-    return 0;
+}
+
+void kmp::print_result()
+{
+    cout << "print the result of kmp" << endl;
+    cout << "buff1: " << buffer1 << endl;
+    cout << "buff2: " << buffer2 << endl;
 }
