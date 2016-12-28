@@ -23,15 +23,21 @@ SOFTWARE.
 */
 
 #pragma once
+#include <vector>
 
 class kmp
 {
 private:
-    std::string buffer1;
-    std::string buffer2;
+    // the buffer to match
+    std::string origin;
+    // the buffer to be matched
+    std::string find_buffer;
 public:
     kmp(std::string buf1, std::string buf2);
     virtual ~kmp();
+private:
+    virtual int do_kmp(std::vector<int> next);
+    virtual std::vector<int> next();
 public:
     virtual void print_result();
 };

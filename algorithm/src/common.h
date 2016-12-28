@@ -26,3 +26,5 @@ SOFTWARE.
 
 #include <iostream>
 using namespace std;
+
+#define SUCCESS 0

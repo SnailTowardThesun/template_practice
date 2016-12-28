@@ -36,7 +36,7 @@ int main(void)
     s->print_result();
     delete s;
 
-    kmp *k = new kmp("aacddeesafkajkdl;kfjas;ldkfjas;ldfkj", "fka");
+    kmp *k = new kmp("aacddeesafkjkdl;kfjas;ldkfkajas;ldfkj", "fka");
     k->print_result();
     delete k;
     return 0;

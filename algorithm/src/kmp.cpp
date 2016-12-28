@@ -27,8 +27,8 @@ SOFTWARE.
 
 kmp::kmp(std::string buf1, std::string buf2)
 {
-    buffer1 = buf1;
-    buffer2 = buf2;
+    origin = buf2;
+    find_buffer = buf1;
 }
 
 kmp::~kmp()
@@ -36,9 +36,68 @@ kmp::~kmp()
 
 }
 
+int kmp::do_kmp(vector<int> next)
+{
+    int pos = 0;
+
+    if (origin.empty() || find_buffer.empty()) {
+        return pos;
+    }
+
+    int j = 0;
+    for (int i = 0; i < find_buffer.size(); ++i) {
+        while (j > 0 && find_buffer[i] != origin[j]) {
+            j = next[j];
+        }
+        if (find_buffer[i] == origin[j]) {
+            j++;
+        }
+        if (j == origin.size()) {
+            return i - j + 2;
+        }
+    }
+    return pos;
+}
+
+vector<int> kmp::next()
+{
+    int len= (int) origin.length();
+    int j=0;
+
+    int *next=new int[len+1] {0};
+
+    for(int i=1; i < len; i++)
+    {
+        while(j > 0 && origin[i] != origin[j]) {
+            j=next[j];
+        }
+
+        if(origin[i]==origin[j]) {
+            j++;
+        }
+
+        next[i+1]=j;
+    }
+
+    vector<int> list;
+    for (int i = 0; i < len+1; ++i) {
+        list.push_back(next[i]);
+    }
+    delete[] next;
+
+    return list;
+}
+
 void kmp::print_result()
 {
+    int ret = 0;
+    if ((ret = do_kmp(next())) == 0) {
+        cout << "do kmp failed" << endl;
+        return;
+    }
+
     cout << "print the result of kmp" << endl;
-    cout << "buff1: " << buffer1 << endl;
-    cout << "buff2: " << buffer2 << endl;
+    cout << "buff1: " << origin << endl;
+    cout << "buff2: " << find_buffer << endl;
+    cout << "the position is " << ret << endl;
 }
