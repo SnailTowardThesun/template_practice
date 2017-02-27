@@ -43,6 +43,5 @@ typename function<decltype(&T::operator())>::Type Lambda(T lam)
 }
 
 // q.1
-// 写一个宏lambda，让lambda([](int a, int b){return a + b;})
-// 返回std::function<int<int, int>>
+// 写一个宏lambda，让lambda变成std::function
 #define LAMBDA Lambda
