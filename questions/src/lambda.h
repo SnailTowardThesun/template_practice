@@ -22,25 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "common.h"
-#include "dfs.h"
-#include "kmp.h"
+#pragma once
+#include <iostream>
 
-int main(void)
-{
-    cout << "##################################" << endl;
-    cout << "run algorithm test" << endl;
-    cout << "##################################" << endl;
-
-    dfs *s = new dfs(4);
-    s->print_result();
-    delete s;
-
-    kmp *k = new kmp("aacddeesafkjkdl;kfjas;ldkfkajas;ldfkj", "fka");
-    k->print_result();
-    delete k;
-
-
-
-    return 0;
-}
+// q.1
+// 写一个宏lambda，让lambda([](int a, int b){return a + b;})
+// 返回std::function<int<int, int>>
+#define LAMBDA_ADD(func) std::function<int(int, int)>(func)

@@ -22,25 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "common.h"
-#include "dfs.h"
-#include "kmp.h"
-
-int main(void)
-{
-    cout << "##################################" << endl;
-    cout << "run algorithm test" << endl;
-    cout << "##################################" << endl;
-
-    dfs *s = new dfs(4);
-    s->print_result();
-    delete s;
-
-    kmp *k = new kmp("aacddeesafkjkdl;kfjas;ldkfkajas;ldfkj", "fka");
-    k->print_result();
-    delete k;
-
-
-
-    return 0;
-}
+#include "lambda.h"

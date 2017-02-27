@@ -11,3 +11,4 @@ set (LIBRARY_OUTPUT_PATH ${RS_SERVER_BINARY_DIR})
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/sort)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/algorithm)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/questions)
