@@ -33,6 +33,7 @@ int main()
         return a + b;
     };
 
-    std::cout << LAMBDA_ADD(lam)(1, 2) << std::endl;
+    auto func = LAMBDA(lam);
+    std::cout << func(1, 2) << std::endl;
     return 0;
 }

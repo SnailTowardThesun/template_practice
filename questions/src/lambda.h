@@ -25,7 +25,24 @@ SOFTWARE.
 #pragma once
 #include <iostream>
 
+template<typename T>
+struct function
+{
+};
+
+template<typename TObject, typename R, typename ...TArgs>
+struct function<R (TObject::*)(TArgs...)const>
+{
+    typedef std::function<R(TArgs...)> Type;
+};
+
+template<typename T>
+typename function<decltype(&T::operator())>::Type Lambda(T lam)
+{
+    return lam;
+}
+
 // q.1
 // 写一个宏lambda，让lambda([](int a, int b){return a + b;})
 // 返回std::function<int<int, int>>
-#define LAMBDA_ADD(func) std::function<int(int, int)>(func)
+#define LAMBDA Lambda
