@@ -3,3 +3,12 @@ compile/
 .idea/
 .ycm_extra_conf.py
 cmake-build-debug
+*.suo
+Debug/algorithm.obj
+*.obj
+*.log
+*.tlog
+Debug/vc140.idb
+*.pdb
+template_pratice.VC.db
+*.opendb
