@@ -23,10 +23,18 @@ SOFTWARE.
 */
 
 #pragma once
-class CShellSort
+#include "BaseSort.h"
+class CShellSort : public CBaseSort
 {
 public:
     CShellSort();
     ~CShellSort();
+private:
+     vector<long> m_data_list;
+public:
+    virtual bool sort();
+    virtual bool print_the_sorted_list();
+    virtual bool get_user_data(vector<long> user_data);
+    virtual vector<long> get_sorted_data();
 };
 

@@ -35,3 +35,46 @@ CShellSort::CShellSort()
 CShellSort::~CShellSort()
 {
 }
+
+bool CShellSort::sort()
+{
+    int N = user_data.size();
+    int n = 1;
+
+    while(h < N/3)
+    {
+        h = 3*h + 1;
+    }
+
+    while(h >= 1)
+    {
+        for (int i = h; i < N; ++i)
+        {
+            for (int j = i; j >= h && m_data_list[j] < m_data_list[j - h]; j -= h)
+            {
+                swap(m_data_list[j], m_data_list[j-h]);
+            }
+        }
+    }
+    return true;
+}
+
+bool CShellSort::print_the_sorted_list()
+{
+    for (auto i : m_data_list)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    return true;
+}
+
+bool CShellSort::get_user_data(vector<long> user_data)
+{
+    m_data_list = user_data;
+}
+
+vector<long> CShellSort::get_sorted_data()
+{
+    return m_data_list;
+}
