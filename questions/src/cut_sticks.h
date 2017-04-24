@@ -22,23 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "lambda.h"
-#include "cut_sticks.h"
+#include <iostream>
+#include <vector>
 
-int main()
+using STICKS = std::vector<std::vector<int>>;
+
+class Cuter
 {
-    std::cout << "some questions got from internet" << std::endl;
-
-    auto lam = [](int a, int b) {
-        return a + b;
-    };
-
-    auto func = LAMBDA(lam);
-    std::cout << func(1, 2) << std::endl;
-
-    Cuter c;
-    STICKS s = {{2,4,6}, {3, 3, 7, 9}, {1,1,1,2,1,1,1}, {6}};
-
-    std::cout << "max is " << c.max_slice(s) << std::endl;
-    return 0;
-}
+public:
+    Cuter();
+    virtual ~Cuter();
+public:
+    int max_slice(STICKS stick);
+};

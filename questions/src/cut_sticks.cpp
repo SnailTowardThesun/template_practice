@@ -22,23 +22,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "lambda.h"
+/*
+ * 有n根甘蔗，每根的每一节都不一样长，存在一个二维数组里
+ * 比如[2,4,8]表示这个甘蔗有三节，第一节2cm，第二节4cm.....
+ * 最多能同时砍到多少个节的缝隙
+ */
+
 #include "cut_sticks.h"
+#include <map>
 
-int main()
+using namespace std;
+
+Cuter::Cuter()
 {
-    std::cout << "some questions got from internet" << std::endl;
+}
 
-    auto lam = [](int a, int b) {
-        return a + b;
-    };
+Cuter::~Cuter()
+{
+}
 
-    auto func = LAMBDA(lam);
-    std::cout << func(1, 2) << std::endl;
+int Cuter::max_slice(STICKS stick)
+{
+    int ret = 0;
+    map<int, int> counter;
+    for (auto i : stick) {
+        auto tmp = 0;
+        for (auto j : i ) {
+            counter[j + tmp] += 1;
+            tmp += j;
+        }
+    }
 
-    Cuter c;
-    STICKS s = {{2,4,6}, {3, 3, 7, 9}, {1,1,1,2,1,1,1}, {6}};
+    for (auto i : counter) {
+        ret = ret < i.second ? i.second : ret;
+    }
 
-    std::cout << "max is " << c.max_slice(s) << std::endl;
-    return 0;
+    return ret;
 }
