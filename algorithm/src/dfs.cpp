@@ -25,6 +25,7 @@ SOFTWARE.
 #include "dfs.h"
 #include "common.h"
 #include "stdlib.h"
+using namespace std;
 
 dfs::dfs(int d)
 {

@@ -56,5 +56,6 @@ int main(void)
     pStack->print_the_sorted_list();
     delete pStack;
 
+	getchar();
     return 0;
 }

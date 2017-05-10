@@ -34,7 +34,6 @@ private:
 public:
     virtual bool sort();
     virtual bool print_the_sorted_list();
-    virtual bool get_user_data(vector<long> user_data);
     virtual vector<long> get_sorted_data();
 };
 

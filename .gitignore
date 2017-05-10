@@ -13,3 +13,10 @@ Debug/vc140.idb
 template_pratice.VC.db
 *.opendb
 .vscode
+/algorithm/src/Debug
+/sort/src/Debug
+/questions/src/Debug
+/Debug
+*.db
+*.filters
+*.user

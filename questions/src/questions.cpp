@@ -40,5 +40,7 @@ int main()
     STICKS s = {{2,4,6}, {3, 3, 7, 9}, {1,1,1,2,1,1,1}, {6}};
 
     std::cout << "max is " << c.max_slice(s) << std::endl;
+
+	getchar();
     return 0;
 }

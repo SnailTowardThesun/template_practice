@@ -24,6 +24,7 @@ SOFTWARE.
 
 #pragma once
 #include <iostream>
+#include <functional>
 
 template<typename T>
 struct function

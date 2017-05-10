@@ -25,7 +25,7 @@ SOFTWARE.
 #include "common.h"
 #include "dfs.h"
 #include "kmp.h"
-
+using namespace std;
 int main(void)
 {
     cout << "##################################" << endl;

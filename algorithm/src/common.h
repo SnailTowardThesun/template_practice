@@ -25,6 +25,5 @@ SOFTWARE.
 #pragma once
 
 #include <iostream>
-using namespace std;
 
 #define SUCCESS 0

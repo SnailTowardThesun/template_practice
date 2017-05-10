@@ -38,9 +38,9 @@ CShellSort::~CShellSort()
 
 bool CShellSort::sort()
 {
-    int N = user_data.size();
+    int N = m_data_list.size();
     int n = 1;
-
+	int h = 0;
     while(h < N/3)
     {
         h = 3*h + 1;
@@ -67,11 +67,6 @@ bool CShellSort::print_the_sorted_list()
     }
     cout << endl;
     return true;
-}
-
-bool CShellSort::get_user_data(vector<long> user_data)
-{
-    m_data_list = user_data;
 }
 
 vector<long> CShellSort::get_sorted_data()

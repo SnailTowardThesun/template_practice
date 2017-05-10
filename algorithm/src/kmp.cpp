@@ -24,6 +24,7 @@ SOFTWARE.
 
 #include "common.h"
 #include "kmp.h"
+#include <vector>
 
 kmp::kmp(std::string buf1, std::string buf2)
 {
@@ -36,7 +37,7 @@ kmp::~kmp()
 
 }
 
-int kmp::do_kmp(vector<int> next)
+int kmp::do_kmp(std::vector<int> next)
 {
     int pos = 0;
 
@@ -59,7 +60,7 @@ int kmp::do_kmp(vector<int> next)
     return pos;
 }
 
-vector<int> kmp::next()
+std::vector<int> kmp::next()
 {
     int len= (int) origin.length();
     int j=0;
@@ -79,7 +80,7 @@ vector<int> kmp::next()
         next[i+1]=j;
     }
 
-    vector<int> list;
+    std::vector<int> list;
     for (int i = 0; i < len+1; ++i) {
         list.push_back(next[i]);
     }
@@ -92,12 +93,12 @@ void kmp::print_result()
 {
     int ret = 0;
     if ((ret = do_kmp(next())) == 0) {
-        cout << "do kmp failed" << endl;
+        std::cout << "do kmp failed" << std::endl;
         return;
     }
 
-    cout << "print the result of kmp" << endl;
-    cout << "buff1: " << origin << endl;
-    cout << "buff2: " << find_buffer << endl;
-    cout << "the position is " << ret << endl;
+    std::cout << "print the result of kmp" << std::endl;
+    std::cout << "buff1: " << origin.c_str() << std::endl;
+    std::cout << "buff2: " << find_buffer.c_str() << std::endl;
+    std::cout << "the position is " << ret << std::endl;
 }
