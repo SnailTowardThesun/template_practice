@@ -40,7 +40,7 @@ int main(void)
     k->print_result();
     delete k;
 
-
+	getchar();
 
     return 0;
 }
